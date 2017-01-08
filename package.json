@@ -1,0 +1,30 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "algorithm practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwmuk/algorithms.git"
+  },
+  "keywords": [
+    "algorithm"
+  ],
+  "author": "lwmuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lwmuk/algorithms/issues"
+  },
+  "homepage": "https://github.com/lwmuk/algorithms#readme",
+  "devDependencies": {
+    "eslint": "^3.13.0",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2"
+  }
+}
