@@ -1,10 +1,11 @@
 require('should');
 const {
   selectionSort,
+  bubbleSort,
 } = require('../src/chapter3');
 
 describe('chapter3', () => {
-  [selectionSort].forEach(sort => {
+  [selectionSort, bubbleSort].forEach(sort => {
     describe(sort.name, () => {
       it('non-array should throw', () => {
         sort.should.throw();
