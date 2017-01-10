@@ -85,4 +85,24 @@ module.exports = {
 
     return sortedArray;
   },
+
+  /**
+   * 顺序查找
+   *
+   * @param {Array} array 数组
+   * @param {*} key 查找键
+   *
+   * @returns {Number} 元素存在返回下标，否则返回-1
+   */
+  sequentialSearch(array, key) {
+    assert(Array.isArray(array));
+
+    for (let i = 0, len = array.length; i < len; i += 1) {
+      if (array[i] === key) {
+        return i;
+      }
+    }
+
+    return -1;
+  },
 };
