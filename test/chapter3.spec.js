@@ -24,6 +24,7 @@ describe('chapter3', () => {
         const originalArray = [89, 45, 68, 90, 29, 34, 17];
         const sortedArray = [17, 29, 34, 45, 68, 89, 90];
         sort(originalArray).should.eql(sortedArray);
+        sort(sortedArray).should.eql(sortedArray);
       });
     });
   });
