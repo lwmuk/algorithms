@@ -105,4 +105,36 @@ module.exports = {
 
     return -1;
   },
+
+  /**
+   * 蛮力字符串匹配
+   *
+   * @param {String} text 文本
+   * @param {String} pattern 模式
+   *
+   * @returns {Number} 查找成功返回起始下标，否则返回-1
+   */
+  bruteForceStringMatch(text, pattern) {
+    assert(typeof text === 'string');
+    assert(typeof pattern === 'string');
+
+    const n = text.length;
+    const m = pattern.length;
+    // 其中之一为空串，直接判定为不匹配
+    if (!n || !m) {
+      return -1;
+    }
+
+    for (let i = 0; i < (n - m) + 1; i += 1) {
+      let j = 0;
+      while (j < m && pattern[j] === text[i + j]) {
+        j += 1;
+      }
+      if (j === m) {
+        return i;
+      }
+    }
+
+    return -1;
+  },
 };
