@@ -6,5 +6,6 @@
   },
   "rules": {
     "no-param-reassign": ["error", { "props": false }],
+    "no-restricted-properties": ["error", { "property": "Math.pow"}],
   },
 }

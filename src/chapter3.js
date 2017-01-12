@@ -137,4 +137,28 @@ module.exports = {
 
     return -1;
   },
+
+  /**
+   * 计算平面中两个最近点的距离
+   *
+   * @param {Array[]} points 点集
+   *
+   * @returns {Number} 距离
+   */
+  bruteForceClosestPoints(points) {
+    assert(Array.isArray(points));
+    assert(points.length >= 2);
+
+    let d = Infinity;
+    for (let i = 0, len = points.length; i < len - 1; i += 1) {
+      const [xi, yi] = points[i];
+      for (let j = i + 1; j < len; j += 1) {
+        const [xj, yj] = points[j];
+        const dij = Math.pow(xi - xj, 2) + Math.pow(yi - yj, 2);
+        d = Math.min(d, dij);
+      }
+    }
+
+    return Math.sqrt(d);
+  },
 };

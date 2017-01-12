@@ -4,6 +4,7 @@ const {
   bubbleSort,
   sequentialSearch,
   bruteForceStringMatch,
+  bruteForceClosestPoints,
 } = require('../src/chapter3');
 
 describe('chapter3', () => {
@@ -51,6 +52,18 @@ describe('chapter3', () => {
       bruteForceStringMatch('hahaha', 'hah').should.equal(0);
       bruteForceStringMatch('abdeecde', 'cde').should.equal(5);
       bruteForceStringMatch('abcd', 'd').should.equal(3);
+    });
+  });
+
+  describe('bruteForceClosestPoints', () => {
+    it('2 points should be ok', () => {
+      bruteForceClosestPoints([[0, 0], [0, 2]]).should.equal(2);
+      bruteForceClosestPoints([[0, 0], [1, 1]]).should.equal(Math.sqrt(2));
+    });
+
+    it('2+ points should be ok', () => {
+      const points = [[0, 0], [-1, 1], [1, 1], [2, 3], [0, 1]];
+      bruteForceClosestPoints(points).should.equal(1);
     });
   });
 });
